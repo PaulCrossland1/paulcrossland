@@ -119,23 +119,23 @@ p.tagline {
 
 /* Projects section */
 .projects-section {
-    padding: 8rem 0; /* Increased from 4rem */
+    padding: 8rem 0; /* Keep this to maintain overall section padding */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 4rem; /* Reduced from 16rem - controls space between title and cards */
+    gap: 1rem; /* Reduced from 4rem to bring cards closer to header */
 }
 
 .projects-header {
     text-align: left;
-    margin-bottom: 2rem; /* Reduced from 8rem - this controls space between header and first project */
+    margin-bottom: 1rem; /* Reduced from 2rem to further reduce space */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeIn 1.5s ease forwards;
-    min-height: 70vh; /* Reduced from 80vh */
+    min-height: 70vh; /* This value can also be reduced if needed */
     display: flex;
-    flex-direction: row; /* Changed from column to row */
-    justify-content: space-between; /* Space between text and image */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
 
