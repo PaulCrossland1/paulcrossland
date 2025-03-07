@@ -19,7 +19,6 @@ body {
     color: #fff;
     overflow-x: hidden;
     position: relative;
-    min-height: 100vh;
 }
 
 /* Canvas for stars */
@@ -94,7 +93,7 @@ header {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 4rem; /* Reduced from 5rem */
     font-weight: 800;
     margin-bottom: 1rem;
     letter-spacing: -0.05em;
@@ -108,7 +107,7 @@ h1 {
 }
 
 p.tagline {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Reduced from 1.5rem */
     color: #aaa;
     max-width: 600px;
     text-align: center;
@@ -120,89 +119,57 @@ p.tagline {
 /* Projects section */
 .projects-section {
     padding: 4rem 0;
-    min-height: 200vh; /* Extended for multiple projects */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    gap: 8rem; /* Added space between projects */
+    align-items: center;
 }
 
-.projects-header {
-    text-align: left;
-    margin-bottom: 4rem;
+.project-showcase {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeIn 1.5s ease forwards;
 }
 
-.projects-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-align: left;
-}
-
-.projects-header p {
-    color: #aaa;
-    max-width: 600px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* Project wrapper (contains image and container) */
-.project-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Reduced consistent gap */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-    margin-bottom: 6rem;
-}
-
-.project-wrapper.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.left-aligned {
-    flex-direction: row;
-}
-
-.right-aligned {
-    flex-direction: row-reverse;
-}
-
-/* Project container (white border box) */
-.project-container {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 1);
-    border-radius: 16px;
-    padding: 2rem;
-}
-
-.project-content {
-    text-align: left;
-}
-
-/* Project image (outside container) */
 .project-image {
     flex: 1;
-    max-width: 20%;
+    max-width: 50%;
 }
 
-.project-image img {
+.slideshow {
+    position: relative;
     width: 100%;
+    height: 0;
+    padding-bottom: 120%; /* Reduced aspect ratio */
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
-.project-image img:hover {
-    transform: scale(1.02);
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    object-fit: contain; /* Changed from cover to contain */
 }
 
-.project-content h2 {
-    font-size: 2.2rem;
+.slide.active {
+    opacity: 1;
+}
+
+.project-description {
+    flex: 1;
+}
+
+.project-description h2 {
+    font-size: 2rem; /* Reduced from 2.5rem */
     margin-bottom: 1.5rem;
     background: linear-gradient(90deg, #fff, #888);
     -webkit-background-clip: text;
@@ -210,18 +177,49 @@ p.tagline {
     -webkit-text-fill-color: transparent;
 }
 
-.project-content p {
+.project-description p {
     color: #ddd;
     line-height: 1.6;
     margin-bottom: 2rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem; /* Reduced from 1.1rem */
+}
+
+.app-list {
+    margin-bottom: 2rem;
+}
+
+.app-item {
+    margin-bottom: 1.5rem;
+}
+
+.app-item h3 {
+    font-size: 1.1rem; /* Reduced from 1.3rem */
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.app-item p {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem; /* Reduced from 1rem */
+}
+
+.app-link {
+    display: inline-block;
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 0.8rem; /* Reduced from 0.9rem */
+    transition: all 0.3s ease;
+}
+
+.app-link:hover {
+    opacity: 0.8;
+    transform: translateX(5px);
 }
 
 .skills-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 2rem;
 }
 
 .skill-button {
@@ -229,41 +227,15 @@ p.tagline {
     padding: 8px 16px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Reduced from 0.9rem */
     transition: all 0.3s ease;
     cursor: default;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.project-wrapper.visible .skill-button {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .skill-button:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
-}
-
-.project-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #64ffda, #48d1bd);
-    color: #000;
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-    text-transform: lowercase;
-}
-
-.project-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(100, 255, 218, 0.3);
 }
 
 /* Animations */
@@ -284,45 +256,47 @@ footer {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 900px) {
-    .project-wrapper, .left-aligned, .right-aligned {
+    .project-showcase {
         flex-direction: column;
     }
     
-    .project-image, .project-container {
+    .project-image {
         max-width: 100%;
         width: 100%;
-    }
-    
-    .project-image {
+        min-height: 300px; /* Add minimum height */
         margin-bottom: 2rem;
     }
     
-    .projects-header h1 {
-        font-size: 2.5rem;
+    .slideshow {
+        padding-bottom: 100%; /* Adjust aspect ratio for mobile */
+    }
+    
+    h1 {
+        font-size: 2.5rem; /* Reduced from 3rem */
+    }
+    
+    .project-description h2 {
+        font-size: 1.7rem; /* Reduced from 2rem */
     }
 }
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.2rem; /* Reduced from 2.5rem */
     }
     
     p.tagline {
-        font-size: 1rem;
+        font-size: 1rem; /* Reduced from 1.2rem */
     }
     
-    .project-content h2 {
-        font-size: 1.8rem;
-    }
-    
-    .projects-header h1 {
-        font-size: 2.2rem;
+    .project-description h2 {
+        font-size: 1.5rem; /* Reduced from 1.8rem */
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.7rem; /* Reduced from 2rem */
     }
     
     .container {
@@ -331,10 +305,6 @@ footer {
     
     .ticker-content span {
         padding: 0 15px;
-        font-size: 0.8rem;
-    }
-    
-    .project-content h2 {
-        font-size: 1.5rem;
+        font-size: 0.8rem; /* Reduced from 0.9rem */
     }
 }
