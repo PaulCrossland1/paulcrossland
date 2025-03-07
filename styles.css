@@ -594,6 +594,17 @@ footer {
     .projects-header-content {
         max-width: 100%;
         margin-bottom: 2rem;
+        text-align: center; /* Add this line */
+    }
+
+    .projects-header-content h1 {
+        text-align: center; /* Add this line */
+        margin: 0 auto; /* Add this line to center the text */
+    }
+
+    .projects-header-content p {
+        text-align: center; /* Add this line */
+        margin: 0 auto; /* Add this line */
     }
 
     .projects-header-image {
