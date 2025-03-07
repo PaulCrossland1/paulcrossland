@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RS7Z3MB7Z"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1RS7Z3MB7Z');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Crossland | Web Designer</title>
@@ -55,63 +64,78 @@
         <!-- Projects section -->
         <section class="projects-section">
             <div class="projects-header">
-                <h1>Mobile Web App Developer</h1>
-                <p>I build engaging, responsive web applications optimized for mobile devices. Here are some of my recent projects:</p>
-            </div>
-
-            <!-- Mojimind project -->
-            <div class="project-wrapper left-aligned">
-                <div class="project-image">
-                    <img src="./images/phone-2.png" alt="Mojimind - Daily mastermind challenge" />
+                <div class="projects-header-content">
+                    <h1>Mobile Web App Developer</h1>
+                    <p>I build engaging, responsive web applications optimized for mobile devices. Below are some of my recent projects.</p>
                 </div>
-                <div class="project-container">
-                    <div class="project-content">
-                        <h2>mojimind</h2>
-                        <p>Create a webapp based on the classic mastermind game. Using only HTML, JS & CSS, ensure that it runs perfectly on all smartphone devices.</p>
-                        <div class="skills-buttons">
-                            <span class="skill-button">HTML</span>
-                            <span class="skill-button">CSS</span>
-                            <span class="skill-button">JavaScript</span>
+                <div class="projects-header-image">
+                <img src="./images/dev-coding.svg" alt="Developer coding" />    
+                    
+                </div>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Mojimind project -->
+                <div class="project-card">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img src="./images/mojimind.png" alt="Mojimind - Daily mastermind challenge" />
                         </div>
-                        <a href="https://mojimind.com" target="_blank" class="project-link">check it out</a>
+                        <div class="card-text">
+                            <div class="card-text-content">
+                                <h2>mojimind</h2>
+                                <p>A fun take on Mastermind, you have to work out the code of emojis based on the feedback from your guesses.</p>
+                            </div>
+                            <div class="skills-buttons">
+                                <span class="skill-button">HTML</span>
+                                <span class="skill-button">CSS</span>
+                                <span class="skill-button">JavaScript</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Todayku project -->
-            <div class="project-wrapper right-aligned">
-                <div class="project-image">
-                    <img src="./images/phone-1.png" alt="Todayku - Daily sudoku app" />
-                </div>
-                <div class="project-container">
-                    <div class="project-content">
-                        <h2>todayku</h2>
-                        <p>Develop a daily sudoku challenge with progressive difficulty levels, optimized for mobile play with intuitive controls and clean design.</p>
-                        <div class="skills-buttons">
-                            <span class="skill-button">UI/UX</span>
-                            <span class="skill-button">HTML</span>
-                            <span class="skill-button">JavaScript</span>
+                <!-- Todayku project -->
+                <div class="project-card">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img src="./images/todayku.png" alt="Todayku - Daily sudoku app" />
                         </div>
-                        <a href="https://todayku.com" target="_blank" class="project-link">check it out</a>
+                        <div class="card-text">
+                            <div class="card-text-content">
+                                <h2>todayku</h2>
+                                <p>A new sudoku puzzle each day where you are solving for the best time.</p>
+                            </div>
+                            <div class="card-actions">
+                                <div class="skills-buttons">
+                                    <span class="skill-button">UI/UX</span>
+                                    <span class="skill-button">HTML</span>
+                                    <span class="skill-button">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Jotto project -->
-            <div class="project-wrapper left-aligned">
-                <div class="project-image">
-                    <img src="./images/phone-3.png" alt="Jotto - Daily word puzzle" />
-                </div>
-                <div class="project-container">
-                    <div class="project-content">
-                        <h2>jotto</h2>
-                        <p>Design a daily word puzzle that tests vocabulary and deduction skills. Create a minimalist yet engaging interface with subtle animations and feedback.</p>
-                        <div class="skills-buttons">
-                            <span class="skill-button">CSS</span>
-                            <span class="skill-button">JavaScript</span>
-                            <span class="skill-button">Responsive Design</span>
+                <!-- Jotto project -->
+                <div class="project-card">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img src="./images/jotto.png" alt="Jotto - Daily word puzzle" />
                         </div>
-                        <a href="https://jotto.day" target="_blank" class="project-link">check it out</a>
+                        <div class="card-text">
+                            <div class="card-text-content">
+                                <h2>jotto</h2>
+                                <p>A daily word puzzle that tests vocabulary and deduction skills, the game evolves hints as you progress</p>
+                            </div>
+                            <div class="card-actions">
+                                <div class="skills-buttons">
+                                    <span class="skill-button">CSS</span>
+                                    <span class="skill-button">JavaScript</span>
+                                    <span class="skill-button">Responsive Design</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

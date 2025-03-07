@@ -14,8 +14,8 @@ resizeCanvas();
 // Star properties
 const stars = [];
 const shootingStars = [];
-const numStars = 500;
-const shootingStarThreshold = 0.3; // Scroll position where shooting stars appear (0-1)
+const numStars = 750;
+const shootingStarThreshold = 0.1; // Scroll position where shooting stars appear (0-1)
 
 // Create stars with different sizes
 function initStars() {
@@ -25,7 +25,7 @@ function initStars() {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             size: size,
-            speed: 0.05 + (size * 0.02) // Larger stars move slightly faster
+            speed: 0.05 + (size * 0.05) // Larger stars move slightly faster
         });
     }
 }
