@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         slides[currentSlide].classList.add('active');
     }
     
-    // Start slideshow with a 3-second interval
-    setInterval(nextSlide, 3000);
+    // Start slideshow with a 5-second interval
+    setInterval(nextSlide, 5000);
 });
