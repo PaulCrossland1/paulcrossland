@@ -126,7 +126,9 @@ p.tagline {
     gap: 1rem; /* Reduced from 4rem to bring cards closer to header */
 }
 
+/* Base styles */
 .projects-header {
+    text-align: center;
     text-align: left;
     margin-bottom: 1rem; /* Reduced from 2rem to further reduce space */
     opacity: 0;
@@ -140,6 +142,7 @@ p.tagline {
 }
 
 .projects-header-content {
+    text-align: center;
     max-width: 50%; /* Constrain text to left half */
     display: flex;
     flex-direction: column;
@@ -151,6 +154,8 @@ p.tagline {
 }
 
 .projects-header-content p {
+    text-align: center;
+    margin: 0 auto;
     max-width: 90%; /* Ensures text wraps within the container */
     line-height: 1.6;
     color: #aaa;
@@ -587,30 +592,39 @@ footer {
     }
     
     .projects-header {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Change from column back to row */
+        align-items: center;
+        gap: 2rem;
+        text-align: left; /* Keep text left-aligned */
+        min-height: auto;
+        margin-bottom: 3rem;
     }
 
     .projects-header-content {
-        max-width: 100%;
-        margin-bottom: 2rem;
-        text-align: center; /* Add this line */
+        text-align: center; /* Override the left alignment */
+        max-width: 50%; /* Keep the 50% width constraint */
+        margin-bottom: 0;
+        text-align: left; /* Keep text left-aligned */
     }
 
     .projects-header-content h1 {
-        text-align: center; /* Add this line */
-        margin: 0 auto; /* Add this line to center the text */
+        text-align: left;
+        margin: 0;
+        font-size: 2rem; /* Adjust font size for mobile */
     }
 
     .projects-header-content p {
-        text-align: center; /* Add this line */
-        margin: 0 auto; /* Add this line */
+        text-align: center; /* Override the left alignment */
+        margin: 0 auto;
+        text-align: left;
+        margin: 0;
+        font-size: 0.9rem; /* Adjust font size for mobile */
     }
 
     .projects-header-image {
-        max-width: 70%; /* Reduced from 80% */
-        padding: 0; /* Remove padding on mobile */
-        margin-top: 2rem;
+        max-width: 40%; /* Make image slightly smaller than text area */
+        padding: 0;
+        margin-top: 0;
     }
 
     .header-video {
@@ -625,7 +639,13 @@ footer {
     }
     
     p.tagline {
-        font-size: 1rem;
+        font-size: 1rem; /* Slightly smaller for mobile */
+        max-width: 90%; /* Adjust width for mobile */
+        margin: 0 auto; /* Ensure horizontal centering */
+    }
+    
+    header {
+        text-align: center; /* Ensure parent container is also centered */
     }
     
     .project-content h2 {
@@ -650,11 +670,45 @@ footer {
     }
     
     .card-content {
-        flex-direction: column;
+        flex-direction: row; /* Change back to row from column */
+        align-items: center;
+        gap: 1rem;
     }
     
     .card-image {
-        flex: 0 0 100%;
+        flex: 0 0 35%; /* Reduce image width on mobile */
+        max-width: 35%; /* Ensure image doesn't exceed this width */
+    }
+
+    .card-text {
+        flex: 1;
+        padding-left: 1rem;
+    }
+
+    .contact.split {
+        display: flex;
+        flex-direction: column; /* Change to column layout */
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .contact__left {
+        flex: 0 0 auto; /* Remove fixed width */
+        max-width: 200px; /* Control image size */
+        margin-bottom: 1rem; /* Add space between image and form */
+    }
+
+    .contact__right {
+        flex: 1;
+        width: 100%; /* Take full width */
+        padding: 0;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: none;
+        padding: 0 1rem;
     }
 }
 
@@ -674,5 +728,26 @@ footer {
     
     .project-content h2 {
         font-size: 1.5rem;
+    }
+
+    .projects-header {
+        gap: 1rem; /* Reduce gap for very small screens */
+    }
+
+    .projects-header-content h1 {
+        font-size: 1.75rem; /* Further reduce font size */
+    }
+
+    .projects-header-content p {
+        font-size: 0.85rem; /* Further reduce font size */
+    }
+
+    .projects-header-image {
+        max-width: 45%; /* Keep image proportional */
+    }
+    
+    .card-image {
+        flex: 0 0 30%; /* Even smaller for very small screens */
+        max-width: 30%;
     }
 }
